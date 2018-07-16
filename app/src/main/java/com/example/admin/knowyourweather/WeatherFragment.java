@@ -1,4 +1,5 @@
 package com.example.admin.knowyourweather;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
@@ -10,7 +11,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,12 +32,11 @@ public class WeatherFragment extends Fragment {
     TextView currentTemperatureField;
     TextView weathercondition;
     LinearLayout background;
+    RelativeLayout.LayoutParams layoutParams;
+      RelativeLayout relativeLayout;
 TextView weatherIcon;
 Typeface weatherFont;
-//private static final String OPEN_WEATHER_MAP_URL =
-  //      "http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric";
-//    private static final String OPEN_WEATHER_MAP_API = "92cba32359290c222aca7aa3f22d0166";
-
+ImageView temp;
     Handler handler;
     public WeatherFragment() {
         handler = new Handler();
@@ -45,6 +47,7 @@ Typeface weatherFont;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         updateWeatherData(new PastData(getActivity()).getCity());
+
     }
 
     @Override
@@ -134,12 +137,19 @@ Typeface weatherFont;
                 icon = getActivity().getString(R.string.weather_sunny);
                 background.setBackground(getResources()
                         .getDrawable(R.drawable.sunny));
-
+                updatedField.setTextColor(getResources().getColor(R.color.black));
+                humidity.setTextColor(getResources().getColor(R.color.black));
+                currentTemperatureField.setTextColor(getResources().getColor(R.color.black));
+                pressure.setTextColor(getResources().getColor(R.color.black));
+                weathercondition.setTextColor(getResources().getColor(R.color.black));
+                cityField.setTextColor(getResources().getColor(R.color.black));
+                weatherIcon.setTextColor(getResources().getColor(R.color.black));
 
             } else {
                 icon = getActivity().getString(R.string.weather_clear_night);
                 background.setBackground(getResources()
                         .getDrawable(R.drawable.night));
+
                 updatedField.setTextColor(getResources().getColor(R.color.color2));
                 humidity.setTextColor(getResources().getColor(R.color.color2));
                 currentTemperatureField.setTextColor(getResources().getColor(R.color.color2));
@@ -178,6 +188,7 @@ Typeface weatherFont;
                     weatherIcon.setTextColor(getResources().getColor(R.color.black));
                     break;
                 case 8 : icon = getActivity().getString(R.string.weather_cloudy);
+
                     background.setBackground(getResources()
                             .getDrawable(R.drawable.cloudy));
                     break;

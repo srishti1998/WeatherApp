@@ -8,16 +8,27 @@
     android:alpha="1.5"
     tools:targetApi="11"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/time"
+            />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/updated"
         android:text="Updated "
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="25dp"
         android:textColor="@color/primaryColor"
         android:textStyle="bold"
         android:textSize="25dp"
         android:layout_marginTop="10dp"/>
+    </LinearLayout>
     <TextView
         android:id="@+id/weathericon"
         android:layout_width="150dp"
@@ -31,14 +42,19 @@
     <LinearLayout
         android:layout_marginTop="80dp"
         android:layout_width="match_parent"
+        android:id="@+id/l2"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/temp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="temprature"
         android:id="@+id/temprature"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="3dp"
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_weight="1"
@@ -49,7 +65,7 @@
             android:layout_height="wrap_content"
             android:text="Condition"
             android:id="@+id/weathercondition"
-            android:layout_marginLeft="105dp"
+            android:layout_marginLeft="130dp"
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_weight="1"
@@ -59,6 +75,15 @@
     android:layout_width="match_parent"
     android:layout_height="5dp"
     android:background="#ffffff"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/city"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,35 +92,57 @@
         android:textColor="@color/primaryColor"
         android:textStyle="bold"
         android:layout_marginLeft="10dp"
-        android:textSize="30dp"
+        android:textSize="25dp"
       />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="50dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hum"
+                android:layout_marginTop="5dp"
+             android:layout_marginLeft="95dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="humidity"
             android:id="@+id/humidity"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="5dp"
             android:textSize="25dp"
             android:textStyle="bold"
             android:layout_weight="1"
             android:textColor="@color/primaryColor"
             />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pressure"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="95dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="pressure"
             android:textStyle="bold"
             android:id="@+id/pressure"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="5dp"
             android:textSize="25dp"
             android:textColor="@color/primaryColor"
             />
-
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>
