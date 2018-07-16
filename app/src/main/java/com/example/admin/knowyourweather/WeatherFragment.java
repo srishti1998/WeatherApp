@@ -32,11 +32,9 @@ public class WeatherFragment extends Fragment {
     TextView currentTemperatureField;
     TextView weathercondition;
     LinearLayout background;
-    RelativeLayout.LayoutParams layoutParams;
-      RelativeLayout relativeLayout;
 TextView weatherIcon;
 Typeface weatherFont;
-ImageView temp;
+TextView winds;
     Handler handler;
     public WeatherFragment() {
         handler = new Handler();
@@ -72,6 +70,8 @@ ImageView temp;
         weathercondition.setTypeface(type);
         humidity.setTypeface(type);
         pressure.setTypeface(type);
+        winds = (TextView)rootView.findViewById(R.id.wind);
+        winds.setTypeface(type);
         return rootView;
     }
     private void updateWeatherData(final String city){         // update weather acc to city
@@ -118,6 +118,11 @@ ImageView temp;
             DateFormat df = DateFormat.getDateTimeInstance();
             String updatedOn = df.format(new Date(json.getLong("dt")*1000));
             updatedField.setText("Last Update: "+updatedOn);
+            JSONObject wind = json.getJSONObject("wind");
+
+            winds.setText(
+                   "Wind Speed:" + " " + wind.getString("speed") +" " + "km/h"
+            );
 
             setWeatherIcon(details.getInt("id"),
                    json.getJSONObject("sys").getLong("sunrise") * 1000,
@@ -144,6 +149,7 @@ ImageView temp;
                 weathercondition.setTextColor(getResources().getColor(R.color.black));
                 cityField.setTextColor(getResources().getColor(R.color.black));
                 weatherIcon.setTextColor(getResources().getColor(R.color.black));
+                winds.setTextColor(getResources().getColor(R.color.black));
 
             } else {
                 icon = getActivity().getString(R.string.weather_clear_night);
@@ -157,6 +163,7 @@ ImageView temp;
                 weathercondition.setTextColor(getResources().getColor(R.color.color2));
               cityField.setTextColor(getResources().getColor(R.color.color2));
                 weatherIcon.setTextColor(getResources().getColor(R.color.color2));
+                winds.setTextColor(getResources().getColor(R.color.color2));
 
             }
         } else {
@@ -171,6 +178,7 @@ ImageView temp;
                     weathercondition.setTextColor(getResources().getColor(R.color.thunder));
                     cityField.setTextColor(getResources().getColor(R.color.thunder));
                     weatherIcon.setTextColor(getResources().getColor(R.color.thunder));
+                    winds.setTextColor(getResources().getColor(R.color.thunder));
                     break;
                 case 3 : icon = getActivity().getString(R.string.weather_drizzle);
                     background.setBackground(getResources()
@@ -186,6 +194,7 @@ ImageView temp;
                     weathercondition.setTextColor(getResources().getColor(R.color.black));
                     cityField.setTextColor(getResources().getColor(R.color.black));
                     weatherIcon.setTextColor(getResources().getColor(R.color.black));
+                   winds.setTextColor(getResources().getColor(R.color.black));
                     break;
                 case 8 : icon = getActivity().getString(R.string.weather_cloudy);
 
@@ -206,6 +215,7 @@ ImageView temp;
                     weathercondition.setTextColor(getResources().getColor(R.color.rain));
                     cityField.setTextColor(getResources().getColor(R.color.rain));
                     weatherIcon.setTextColor(getResources().getColor(R.color.rain));
+                    winds.setTextColor(getResources().getColor(R.color.rain));
                     break;
             }
         }
