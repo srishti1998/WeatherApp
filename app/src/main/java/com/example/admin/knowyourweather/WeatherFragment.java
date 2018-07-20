@@ -183,6 +183,14 @@ TextView winds;
                 case 3 : icon = getActivity().getString(R.string.weather_drizzle);
                     background.setBackground(getResources()
                             .getDrawable(R.drawable.drizzle));
+                    updatedField.setTextColor(getResources().getColor(R.color.black));
+                    humidity.setTextColor(getResources().getColor(R.color.black));
+                    currentTemperatureField.setTextColor(getResources().getColor(R.color.black));
+                    pressure.setTextColor(getResources().getColor(R.color.black));
+                    weathercondition.setTextColor(getResources().getColor(R.color.black));
+                    cityField.setTextColor(getResources().getColor(R.color.black));
+                    weatherIcon.setTextColor(getResources().getColor(R.color.black));
+                    winds.setTextColor(getResources().getColor(R.color.black));
                     break;
                 case 7 : icon = getActivity().getString(R.string.weather_foggy);
                     background.setBackground(getResources()
@@ -200,10 +208,26 @@ TextView winds;
 
                     background.setBackground(getResources()
                             .getDrawable(R.drawable.cloudy));
+                    updatedField.setTextColor(getResources().getColor(R.color.black));
+                    humidity.setTextColor(getResources().getColor(R.color.black));
+                    currentTemperatureField.setTextColor(getResources().getColor(R.color.black));
+                    pressure.setTextColor(getResources().getColor(R.color.black));
+                    weathercondition.setTextColor(getResources().getColor(R.color.black));
+                    cityField.setTextColor(getResources().getColor(R.color.black));
+                    weatherIcon.setTextColor(getResources().getColor(R.color.black));
+                    winds.setTextColor(getResources().getColor(R.color.black));
                     break;
                 case 6 : icon = getActivity().getString(R.string.weather_snowy);
                     background.setBackground(getResources()
                             .getDrawable(R.drawable.snowy));
+                    updatedField.setTextColor(getResources().getColor(R.color.black));
+                    humidity.setTextColor(getResources().getColor(R.color.black));
+                    currentTemperatureField.setTextColor(getResources().getColor(R.color.black));
+                    pressure.setTextColor(getResources().getColor(R.color.black));
+                    weathercondition.setTextColor(getResources().getColor(R.color.black));
+                    cityField.setTextColor(getResources().getColor(R.color.black));
+                    weatherIcon.setTextColor(getResources().getColor(R.color.black));
+                    winds.setTextColor(getResources().getColor(R.color.black));
                     break;
                 case 5 : icon = getActivity().getString(R.string.weather_rainy);
                     background.setBackground(getResources()
